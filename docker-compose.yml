@@ -9,11 +9,11 @@ services:
 
   anvil_2:
     image: ghcr.io/foundry-rs/foundry:v1.3.5
-    entrypoint: anvil --host 0.0.0.0 --port 43113 --chain-id 43113 --block-time 3 --load-state /mnt/43113.json
+    entrypoint: anvil --host 0.0.0.0 --port 31338 --chain-id 31338 --block-time 3 --load-state /mnt/31338.json
     volumes:
       - "./build:/mnt"
     ports:
-      - "43113:43113"
+      - "31338:31338"
 
   solver:
     platform: linux/x86_64
