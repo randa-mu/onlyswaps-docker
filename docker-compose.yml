@@ -1,6 +1,6 @@
 services:
   anvil_1:
-    image: ghcr.io/foundry-rs/foundry:v1.2.0
+    image: ghcr.io/foundry-rs/foundry:v1.3.5
     entrypoint: anvil --host 0.0.0.0 --port 31337 --chain-id 31337 --block-time 3 --load-state /mnt/31337.json
     volumes:
       - "./build:/mnt"
@@ -8,17 +8,17 @@ services:
       - "31337:31337"
 
   anvil_2:
-    image: ghcr.io/foundry-rs/foundry:v1.2.0
-    entrypoint: anvil --host 0.0.0.0 --port 31338 --chain-id 31338 --block-time 3 --load-state /mnt/31338.json
+    image: ghcr.io/foundry-rs/foundry:v1.3.5
+    entrypoint: anvil --host 0.0.0.0 --port 43113 --chain-id 43113 --block-time 3 --load-state /mnt/43113.json
     volumes:
       - "./build:/mnt"
     ports:
-      - "31338:31338"
+      - "43113:43113"
 
   solver:
     platform: linux/x86_64
     image: ghcr.io/randa-mu/onlyswaps-solver:master-latest
-    entrypoint: /usr/local/bin/onlyswaps-solver --config-path /mnt/solver-config.json --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+    entrypoint: /usr/local/bin/onlyswaps-solver --config /mnt/solver-config.json --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
     volumes:
       - "./build:/mnt"
     ports:
@@ -27,4 +27,6 @@ services:
     depends_on:
       - anvil_1
       - anvil_2
+
+
 
