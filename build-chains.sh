@@ -28,7 +28,6 @@ trap cleanup EXIT
 # clear old runs but make sure we have all the right bits
 mkdir -p ./build
 rm -rf ./build/*
-git submodule update --init --recursive
 
 pushd onlyswaps-solidity
 npm install && npm run build
