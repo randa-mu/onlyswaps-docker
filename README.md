@@ -9,10 +9,14 @@ This project allows you to build a local docker setup with the latest version of
 - [foundry](https://getfoundry.sh)
 
 ## Quickstart
-- Build the necessary state  
+- Pull submodules:  
+`git submodule update --init --recursive`
+
+- Build the necessary state:  
+
 `./build-chains.sh`
 
-- Run the corresponding docker zoo 
+- Run the corresponding docker zoo:  
 `docker compose up -d`
 
 You should now be able to run onlyswaps verifiers and UIs until your heart's content!
