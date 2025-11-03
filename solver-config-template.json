@@ -1,13 +1,19 @@
 {
+  "agent": {
+    "healthcheck_listen_addr": "0.0.0.0",
+    "healthcheck_port": 8081,
+    "log_level": "debug",
+    "log_json": false
+  },
   "networks": [{
     "chain_id": 31337,
     "rpc_url": "ws://anvil_1:31337",
-    "rusd_address": "${RUSD_ADDRESS}",
+    "tokens": ["${RUSD_ADDRESS}"],
     "router_address": "${ROUTER_ADDRESS}"
   }, {
     "chain_id": 31338,
     "rpc_url": "ws://anvil_2:31338",
-    "rusd_address": "${RUSD_ADDRESS}",
+    "tokens": ["${RUSD_ADDRESS}"],
     "router_address": "${ROUTER_ADDRESS}"
   }]
 }
