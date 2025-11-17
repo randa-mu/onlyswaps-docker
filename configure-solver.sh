@@ -11,6 +11,10 @@ echo "[+] funding solver"
 cast send --value 10ether 0xa0Ee7A142d267C1f36714E4a8F75612F20a79720 --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:31337
 cast send --value 10ether 0xa0Ee7A142d267C1f36714E4a8F75612F20a79720 --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:31338
 
+echo "[+] funding user"
+cast send --value 10ether 0x2602A1971CA485EF1026d0a06A30AAB3B847e78A --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:31337
+cast send --value 10ether 0x2602A1971CA485EF1026d0a06A30AAB3B847e78A --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:31338
+
 echo "[+] building solver config"
 
 # the addresses should be the same on both chains

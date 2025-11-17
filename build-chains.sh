@@ -40,6 +40,7 @@ anvil --port 31337 --chain-id 31337 --block-time 3 --dump-state build/31337.json
 
 anvil --port 31338 --chain-id 31338 --block-time 3 --dump-state build/31338.json > /dev/null & pids+=($!)
 
+sleep 2
 echo "[+] deploying contracts to 31337"
 ./deploy-anvil.sh 31337 
 echo "[+] enabling transfers on 31337"
