@@ -1,3 +1,6 @@
 [submodule "onlyswaps-solidity"]
 	path = onlyswaps-solidity
 	url = https://github.com/randa-mu/onlyswaps-solidity
+[submodule "permit2"]
+	path = permit2
+	url = https://github.com/Uniswap/permit2

@@ -17,5 +17,11 @@ export PRIVATE_KEY="$PRIVATE_KEY"
 export DEFAULT_CONTRACT_ADMIN="$PRIVATE_KEY"
 
 pushd $SCRIPT_DIR/onlyswaps-solidity
+echo "[+] deploying onlyswaps contracts"
 forge script script/onlyswaps/DeployAllContracts.s.sol:DeployAllContracts --broadcast --rpc-url $RPC_URL --private-key $PRIVATE_KEY --force
+popd
 
+# deploy permit2 contract
+pushd $SCRIPT_DIR/permit2
+echo "[+] deploying permit2 contracts"
+forge script script/DeployPermit2.s.sol:DeployPermit2 --broadcast --rpc-url $RPC_URL --private-key $PRIVATE_KEY
